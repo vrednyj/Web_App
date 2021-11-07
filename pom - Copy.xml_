@@ -28,11 +28,6 @@
 
   <dependencies>
     <!-- Testing dependencies. -->
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-		<version>3.1.0</version>
-	</dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -62,20 +57,10 @@
       <version>${mockito.version}</version>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
-	  <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.1</version>
-        <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.2</version> 
-      </plugin>	
+
       <plugin>
         <!-- Configures the compiler. -->
         <groupId>org.apache.maven.plugins</groupId>
@@ -87,6 +72,7 @@
           </compilerArgs>
         </configuration>
       </plugin>
+
       <plugin>
         <!-- Unit tests are run by surefire. -->
         <!-- Classes under src/test/java called *Test are included automatically. -->
