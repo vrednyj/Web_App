@@ -14,8 +14,9 @@ jobs:
     docker:
       - image: cimg/openjdk:11.0
     # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps    
     steps:
+    working_directory: /
       # Checkout the code as the first step.
       - checkout
      # Creating Folder
