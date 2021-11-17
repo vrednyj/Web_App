@@ -42,8 +42,9 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
-          attach-workspace: true
+          command: mvn package
+      - store_artifacts:
+          path: /home
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
