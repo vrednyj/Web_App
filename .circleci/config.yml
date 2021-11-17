@@ -15,6 +15,8 @@ jobs:
       - image: cimg/openjdk:11.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+        # Checkout the code as the first step.
+      - checkout
     working_directory: /tmp
     steps:
       - run:
@@ -30,8 +32,6 @@ jobs:
 
       - store_artifacts:
           path: /tmp/artifacts
-      # Checkout the code as the first step.
-      - checkout
       - run:
           name: Validate
           command: mvn validate
