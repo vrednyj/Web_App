@@ -44,7 +44,7 @@ jobs:
           command: mvn -B -DskipTests clean package
       - run:
           name: Test
-          comand: mvn test
+          command: mvn test
       # Then run your Packaging!
       - run:
           name: Package
