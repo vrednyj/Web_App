@@ -35,23 +35,31 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-     # Creating Folder
+     # Clean
+      - run:
+          name: Clean
+          command: mvn clean
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
-      # Then run your tests!
       - run:
           name: Test
+          comand: mvn test
+      # Then run your Packaging!
+      - run:
+          name: Package
           command: mvn package
+      # Saving the target to Circle CI workspace    
       - store_artifacts:
           path: /home/circleci/project/target
+      # Saving test results to Circle CI workspace    
       - store_test_results:
           path: target/surefire-reports
           
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+  Lab3_Web_App: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       #- create-folders
