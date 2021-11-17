@@ -21,7 +21,7 @@ jobs:
      # Creating Folder
       - run:
         name: Creating Dummy Artifacts
-          command: |
+          command:|
           mkdir /tmp/artifacts;
       - run:
           name: Build
