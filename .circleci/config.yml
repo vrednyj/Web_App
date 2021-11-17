@@ -17,7 +17,6 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
         # Checkout the code as the first step.
       - checkout
-    steps:
       - run:
           name: Validate
           command: mvn validate
