@@ -19,20 +19,10 @@ jobs:
       # Checkout the code as the first step.
       - checkout
      # Creating Folder
-     - run:
+      - run:
         name: Creating Dummy Artifacts
-        command: |
-          #echo "my artifact file" > /tmp/art-1;
+          command: |
           mkdir /tmp/artifacts;
-          #echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-
-    #- store_artifacts:
-    #    path: /tmp/art-1
-    #    destination: artifact-file
-
-    #- store_artifacts:
-    #    path: /tmp/artifacts
-     # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
