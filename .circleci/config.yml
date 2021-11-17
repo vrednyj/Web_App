@@ -18,15 +18,7 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run:
-          name: Creating Dummy Artifacts
-          command: |
-            #echo "my artifact file" > /tmp/art-1;
-            mkdir /tmp/artifacts;
-            #echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-       - store_artifacts:
-          path: /tmp/artifacts      
-      # Use mvn clean and package as the standard maven build phase
+     # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
@@ -34,7 +26,6 @@ jobs:
       - run:
           name: Test
           command: mvn test
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
