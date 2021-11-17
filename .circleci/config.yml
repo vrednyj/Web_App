@@ -21,8 +21,7 @@ jobs:
      # Creating Folder
       - run:
         name: Creating Dummy Artifacts
-          command:|
-          mkdir /tmp/artifacts;
+          command: mkdir /tmp/artifacts
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
